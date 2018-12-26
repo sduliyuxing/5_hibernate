@@ -1,0 +1,21 @@
+<?lyx.taotao.xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="bao2">
+
+    <class name="news2" table="news" dynamic-insert="true">
+
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <!--指定主键的生成策略-->
+            <generator class="native"/>
+        </id>
+
+        <property name="name" type="java.lang.String" column="name"/>
+
+        <property name="date" type="timestamp" column="date"/>
+
+    </class>
+    
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+<?lyx.taotao.xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="bao8nton">
+    <class name="bao8nton.xuesheng" table="xuesheng">
+        <id name="xueid" type="java.lang.Integer" column="xueid">
+            <generator class="native"/>
+        </id>
+        <property name="xuename" type="java.lang.String" column="xuename"/>
+        <set name="kechengSet" table="biao" inverse="true">
+            <key>
+                <column name="xue_id"/>
+            </key>
+            <many-to-many class="bao8nton.kecheng" column="ke_id"/>
+        </set>
+     </class>
+</hibernate-mapping> 

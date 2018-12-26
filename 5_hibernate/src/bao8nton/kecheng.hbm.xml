@@ -1,0 +1,20 @@
+<?lyx.taotao.xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="bao8nton">
+    <class name="kecheng" table="kecheng">
+        <id name="keid" type="java.lang.Integer" column="keid">
+            <generator class="native"/>
+        </id>
+        <property name="kename" type="string" column="kename"/>
+        <!-- table: 指定中间表 -->
+        <set name="xueshengSet" table="biao">
+            <key>
+                <column name="ke_id"/>
+            </key>
+            <!-- 使用 many-to-many 指定多对多的关联关系. column 执行 Set 集合中的持久化类在中间表的外键列的名称  -->
+            <many-to-many class="xuesheng" column="xue_id"/>
+        </set>
+      </class>
+</hibernate-mapping>

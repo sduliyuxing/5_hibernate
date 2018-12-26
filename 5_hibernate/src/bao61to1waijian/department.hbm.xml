@@ -1,0 +1,14 @@
+<?lyx.taotao.xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="bao61to1waijian">
+    <class name="department" table="department">
+        <id name="did" type="java.lang.Integer" column="did">
+            <generator class="native"/>
+        </id>
+        <property name="dname" type="java.lang.String" column="dname"/>
+        <!-- 使用 many-to-one 的方式来映射 1-1 关联关系 -->
+        <many-to-one name="m" class="bao61to1waijian.manager" column="managerid" unique="true"/>
+    </class>
+</hibernate-mapping>

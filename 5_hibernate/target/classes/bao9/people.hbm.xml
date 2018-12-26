@@ -1,0 +1,12 @@
+<?lyx.taotao.xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="bao9.people" table="people">
+        <id name="pid" type="java.lang.Integer" column="pid">
+            <generator class="native"/>
+        </id>
+        <property name="pname" type="java.lang.String" column="pname"/>
+        <many-to-one name="s" class="bao9.school" column="s"/>
+     </class>
+</hibernate-mapping>

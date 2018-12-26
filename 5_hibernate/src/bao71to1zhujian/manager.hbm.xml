@@ -1,0 +1,15 @@
+<?lyx.taotao.xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="bao71to1zhujian">
+    <class name="bao71to1zhujian.manager1" table="manager1">
+        <id name="mid" type="java.lang.Integer" column="mid">
+            <generator class="native"/>
+        </id>
+
+        <property name="mname" type="java.lang.String" column="mname"/>
+
+        <one-to-one name="d" class="department1"/>
+     </class>
+</hibernate-mapping>

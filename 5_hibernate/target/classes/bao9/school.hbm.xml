@@ -1,0 +1,17 @@
+<?lyx.taotao.xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="bao9.school" table="school">
+        <id name="sid" type="java.lang.Integer" column="sid">
+            <generator class="native"/>
+        </id>
+        <property name="sname" type="java.lang.String" column="sname"/>
+        <set name="sets" table="school" inverse="true">
+            <key>
+                <column name="s"/>
+            </key>
+            <one-to-many class="bao9.people"/>
+        </set>
+    </class>
+</hibernate-mapping>
